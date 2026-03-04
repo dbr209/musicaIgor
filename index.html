@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Bem-vindo Igor Melancia!</title>
+</head>
+<body>
+  <h1>Bem-vindo à festa do Igor Melancia! 🎉🍉</h1>
+
+  <!-- Áudio -->
+  <audio id="meuAudio" autoplay>
+    <source src="audio.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+
+  <script>
+    // Alguns navegadores bloqueiam autoplay com som
+    // Então podemos tentar tocar via JS depois de carregar
+    window.addEventListener('load', () => {
+      const audio = document.getElementById('meuAudio');
+      audio.play().catch(() => {
+        console.log("Clique na tela para ouvir o áudio.");
+      });
+    });
+
+    // Se quiser, pode permitir tocar ao clicar
+    document.body.addEventListener('click', () => {
+      const audio = document.getElementById('meuAudio');
+      audio.play();
+    });
+  </script>
+</body>
+</html>
